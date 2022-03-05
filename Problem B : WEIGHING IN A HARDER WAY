@@ -1,3 +1,11 @@
+# 1) firstly we divivde 27 coins into 3 set of 9 coins in each.
+# 2) then weigh two of them , if they are balance then the third set has defective coin , else the two which we are weighing have defective coin.
+# 3) After finding the defective coin set (which have 9 coins now) , we divide that set into 3 set of 3 coins in each and repeat the second step to find the sefective set.
+# 4) After finding the defective coin set (which have 3 coins now) , we divide the set into 3 set of one coin in each and again repeat the second step to identify the defective coin.
+# 5) therefore , 3 weighing are enough to identify the defective coin.
+
+# CODE :
+
 import numpy as np
 
 def divide_into_equal_parts(coins_array):
