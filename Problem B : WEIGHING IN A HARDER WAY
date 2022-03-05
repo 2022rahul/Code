@@ -10,15 +10,15 @@ def sum_of_elements(arr):
         sum = sum+a
     return sum
 
-def coin_weight_machine(run_count, coins, count, usualweight):
+def coin_weight_machine(run_count, coins, count, usual_weight):
     if len(coins) == 1:
         print(f"Number of time weighing : {count}")
         return
     splitted_coins = divide_into_equal_parts(coins)
     print(splitted_coins)
     for coin in splitted_coins:
-        if sum_of_elements(coin)> len(coin)*usualweight or sum_of_elements(coin)< len(coin)*usualweight:
-            coin_weight_machine(run_count+1, coin, count+1, usualweight)
+        if sum_of_elements(coin)> len(coin)*usual_weight or sum_of_elements(coin)< len(coin)*usual_weight:
+            coin_weight_machine(run_count+1, coin, count+1, usual_weight)
 
 coin_arr = [10,10,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]
 
