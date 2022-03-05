@@ -1,0 +1,25 @@
+import numpy as np
+
+def divide_into_equal_parts(coins_array):
+    splitted_array = np.array_split(coins_array, 3)
+    return list(splitted_array)
+
+def sum_of_elements(arr):
+    sum=0
+    for a in arr:
+        sum = sum+a
+    return sum
+
+def coin_weight_machine(run_count, coins, count, usualweight):
+    if len(coins) == 1:
+        print(f"Number of time weighing : {count}")
+        return
+    splitted_coins = divide_into_equal_parts(coins)
+    print(splitted_coins)
+    for coin in splitted_coins:
+        if sum_of_elements(coin)> len(coin)*usualweight or sum_of_elements(coin)< len(coin)*usualweight:
+            coin_weight_machine(run_count+1, coin, count+1, usualweight)
+
+coin_arr = [10,10,9,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10]
+
+coin_weight_machine(1,coin_arr, 0, 10)
